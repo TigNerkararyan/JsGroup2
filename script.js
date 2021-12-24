@@ -1,16 +1,19 @@
-function array(arr){
-    let c;
-    for (let j = 0; j < arr.length; j++) {
-        for (let i = 0; i < arr.length; i++) {
-            if(arr[i] > arr[i+1]){
-                c = arr[i];
-                arr[i] = arr[i+1];
-                arr[i+1] = c
-            }
-            
-        }        
+function MinOrMax(array, payman){
+let max = 0;
+let min = array[0];
+for (let i = 1; i < array.length; i++) {
+    if (array[i] > max) {
+        max = array[i]
+    } else if (array[i] < min) {
+        min = array[i]
     }
-    return arr
+    
+}
+if (payman == "max") {
+    return max
+} else if (payman == "min") {
+    return min
+}
 }
 
-console.log(array([5,4,8,3,6,9]))
+console.log(MinOrMax([1,98,78,56,0,24], "min"))
