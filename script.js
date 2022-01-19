@@ -1,16 +1,40 @@
-function array(arr){
-    let c;
-    for (let j = 0; j < arr.length; j++) {
-        for (let i = 0; i < arr.length; i++) {
-            if(arr[i] > arr[i+1]){
-                c = arr[i];
-                arr[i] = arr[i+1];
-                arr[i+1] = c
-            }
-            
-        }        
+const users = [
+    {
+        name: "Armen",
+        suername: "Sargsyan",
+        age: 25,
+        avatar: "https://www.pngarts.com/files/3/Avatar-PNG-Free-Download.png",
+        desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem iure debitis reiciendis natus nihil consequatur at explicabo, animi eum rem nulla corporis. Voluptate nostrum sed consequatur repellat, maxime facilis incidunt?"
+    },
+    {
+        name: "Armen1",
+        suername: "Sargsyan1",
+        age: 25,
+        avatar: "https://www.pngarts.com/files/3/Avatar-PNG-Free-Download.png",
+        desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem iure debitis reiciendis natus nihil consequatur at explicabo, animi eum rem nulla corporis. Voluptate nostrum sed consequatur repellat, maxime facilis incidunt?"
+    },
+    {
+        name: "Armen2",
+        suername: "Sargsyan2",
+        age: 25,
+        avatar: "https://www.pngarts.com/files/3/Avatar-PNG-Free-Download.png",
+        desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem iure debitis reiciendis natus nihil consequatur at explicabo, animi eum rem nulla corporis. Voluptate nostrum sed consequatur repellat, maxime facilis incidunt?"
     }
-    return arr
-}
+];
 
-console.log(array([5,4,8,3,6,9]))
+let card = document.getElementById("card");
+users.map((item => {
+    card.innerHTML += `
+    <div class="col">
+        <img src="${item.avatar}" class="card-img-top" alt="avatar">
+        <div class="card-body">
+        <h5 class="card-title">${item.name} ${item.suername}</h5>
+        <p>
+            <span>Age: </span> <span>${item.age}</span>
+        </p>
+        <p class="card-text">${item.age}</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>`
+}))
+
